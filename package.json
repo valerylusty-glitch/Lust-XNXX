@@ -1,0 +1,9 @@
+{
+  "name": "lust-bot",
+  "version": "1.0.0",
+  "description": "LUST WhatsApp Bot",
+  "main": "index.js",
+  "dependencies": {
+    "@whiskeysockets/baileys": "*"
+  }
+}
