@@ -1,7 +1,1 @@
-module.exports = {
-  prefix: ".",
-  owner: "50934746613",
-  botName: "LUST 💀",
-  version: "1.0",
-  cooldown: 3
-};
+module.exports = { prefix: ".", owner: "50934746613", botName: "𝕷𝖀𝕾𝕿┊𝐃𝐄𝐕 ⽮", version: "1.0", cooldown: 3 };
