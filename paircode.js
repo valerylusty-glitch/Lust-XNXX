@@ -67,7 +67,7 @@ async function initBot() {
 
   // Générer le code d'appairage (pour téléphones sans numéro)
   if (!state.creds?.me?.id) {
-    pairingCode = await sock.requestPairingCode('+1234567890');
+    pairingCode = await sock.requestPairingCode('18494444305');
     console.log(`📱 Code d'appairage: ${pairingCode}`);
   }
 }
