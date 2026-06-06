@@ -1,87 +1,103 @@
 module.exports = {
   name: "menu",
-  description: "Display main menu with enhanced UI",
+  description: "Afficher le menu principal avec une interface améliorée",
   category: "utility",
   async execute(sock, msg, args, config) {
     try {
       const menu = `
-╔═══════════════════════════════════╗
-║  ⚡ LUST BOT - MAIN MENU ⚡    ║
-║  Beyond The Clouds, Beyond Limits ║
-╚═══════════════════════════════════╝
+╔═══════════════════════════════════════════════════════════╗
+║         ⚡ LUST BOT - MENU PRINCIPAL ⚡                ║
+║   Au-delà des nuages, Au-delà des limites                ║
+╚═══════════════════════════════════════════════════════════╝
 
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-🎮 *FUN COMMANDS*
-┗━━━━━━━━━━━━━━━━━━━━━━
-  🎨 ${config.prefix}sticker ─ Convertir imagen a sticker
-  😂 ${config.prefix}meme ─ Meme aleatorio
-  💭 ${config.prefix}quote ─ Cita inspiradora
-  😄 ${config.prefix}joke ─ Chiste divertido
-  🧠 ${config.prefix}fact ─ Hecho interesante
-  🎭 ${config.prefix}truth ─ Pregunta de verdad
-  💪 ${config.prefix}dare ─ Reto atrevido
-  💕 ${config.prefix}ship ─ Compatibilidad
+🎮 *COMMANDES FUN* 🎮
+┣━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+┃  🎨 ${config.prefix}sticker ─ Convertir image en sticker
+┃  😂 ${config.prefix}meme ─ Mème aléatoire
+┃  💭 ${config.prefix}quote ─ Citation inspirante
+┃  😄 ${config.prefix}joke ─ Blague amusante
+┃  🧠 ${config.prefix}fact ─ Fait intéressant
+┃  🎭 ${config.prefix}truth ─ Question de vérité
+┃  💪 ${config.prefix}dare ─ Défi audacieux
+┃  💕 ${config.prefix}ship ─ Compatibilité
+┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-👑 *ADMIN COMMANDS*
-┗━━━━━━━━━━━━━━━━━━━━━━
-  📢 ${config.prefix}tagall ─ Mencionar a todos
-  👢 ${config.prefix}kick ─ Expulsar miembro
-  ⬆️ ${config.prefix}promote ─ Hacer admin
-  ⬇️ ${config.prefix}demote ─ Remover admin
-  🔒 ${config.prefix}close ─ Cerrar grupo
-  🔓 ${config.prefix}open ─ Abrir grupo
-  👋 ${config.prefix}leave ─ Bot se va
-  🔗 ${config.prefix}linkgc ─ Link del grupo
-  🔄 ${config.prefix}resetlink ─ Resetear link
-  👑 ${config.prefix}admins ─ Listar admins
-  📊 ${config.prefix}groupe ─ Info del grupo
-  ⚡ ${config.prefix}autopromote ─ Promocionar dueño
+👑 *COMMANDES ADMIN* 👑
+┣━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+┃  📢 ${config.prefix}tagall ─ Mentionner tout le monde
+┃  👢 ${config.prefix}kick ─ Expulser un membre
+┃  ⬆️  ${config.prefix}promote ─ Faire administrateur
+┃  ⬇️  ${config.prefix}demote ─ Retirer administrateur
+┃  🔒 ${config.prefix}close ─ Fermer le groupe
+┃  🔓 ${config.prefix}open ─ Ouvrir le groupe
+┃  👋 ${config.prefix}leave ─ Le bot s'en va
+┃  🔗 ${config.prefix}linkgc ─ Lien du groupe
+┃  🔄 ${config.prefix}resetlink ─ Réinitialiser le lien
+┃  👑 ${config.prefix}admins ─ Lister les admins
+┃  📊 ${config.prefix}groupinfo ─ Informations du groupe
+┃  ⚡ ${config.prefix}autopromote ─ Promouvoir le propriétaire
+┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-ℹ️ *INFO & STATUS*
-┗━━━━━━━━━━━━━━━━━━━━━━
-  🏓 ${config.prefix}ping ─ Latencia del bot
-  ✅ ${config.prefix}alive ─ Estado del bot
-  👑 ${config.prefix}owner ─ Dueño del bot
-  🤖 ${config.prefix}bot ─ Info del bot
-  ⏱️ ${config.prefix}runtime ─ Tiempo de ejecución
-  ⚡ ${config.prefix}speed ─ Test de velocidad
-  📋 ${config.prefix}menu ─ Este menú
-  ❓ ${config.prefix}help ─ Ayuda completa
+ℹ️ *INFO & STATUT* ℹ️
+┣━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+┃  🏓 ${config.prefix}ping ─ Latence du bot
+┃  ✅ ${config.prefix}alive ─ État du bot
+┃  👑 ${config.prefix}owner ─ Propriétaire du bot
+┃  🤖 ${config.prefix}bot ─ Infos du bot
+┃  ⏱️  ${config.prefix}runtime ─ Temps d'exécution
+┃  ⚡ ${config.prefix}speed ─ Test de vitesse
+┃  📋 ${config.prefix}menu ─ Ce menu
+┃  ❓ ${config.prefix}help ─ Aide complète
+┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-✨ *CARACTERÍSTICAS*
-┗━━━━━━━━━━━━━━━━━━━━━━
-  ⚡ Rápido y silencioso
-  🔐 Seguro con Baileys
-  🎯 27+ comandos
-  📌 Gestión de grupos
-  🤖 Automatización
-  🎨 Interfaz moderna
+✨ *CARACTÉRISTIQUES* ✨
+┣━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+┃  ⚡ Rapide et silencieux
+┃  🔐 Sécurisé avec Baileys
+┃  🎯 27+ commandes
+┃  📌 Gestion de groupes
+┃  🤖 Automatisation avancée
+┃  🎨 Interface moderne
+┃  💎 Premium features
+┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-👨‍💻 BOT INFO
-┣ 🤖 Nombre: ${config.botName}
-┣ 📌 Versión: ${config.version}
-┣ ⚡ Prefix: ${config.prefix}
-┣ ⏱️ Cooldown: ${config.cooldown}s
-┗ 📱 Estado: 🟢 ONLINE
+👨‍💻 *INFOS DU BOT*
+┣ 🤖 Nom: ${config.botName}
+┣ 📌 Version: ${config.version}
+┣ ⚡ Préfixe: ${config.prefix}
+┣ ⏱️  Cooldown: ${config.cooldown}s
+┗ 📱 État: 🟢 EN LIGNE
 
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-💪 *Powered by LUST DEV*
-🌐 Beyond The Clouds, Beyond Limits
+💪 *Développé par LUST DEV* 💪
+🌐 Au-delà des nuages, Au-delà des limites
+⭐ https://i.postimg.cc/JznXjbWh/019e71fd-9461-7b7d-ac0e-b3341084a3e4.png
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
       `.trim();
       
-      await sock.sendMessage(msg.key.remoteJid, { text: menu });
+      // Envoyer le menu avec image
+      await sock.sendMessage(msg.key.remoteJid, {
+        image: { url: "https://i.postimg.cc/JznXjbWh/019e71fd-9461-7b7d-ac0e-b3341084a3e4.png" },
+        caption: menu
+      });
+      
     } catch (error) {
       console.error(error);
+      await sock.sendMessage(msg.key.remoteJid, {
+        text: "❌ Une erreur est survenue lors du chargement du menu"
+      });
     }
   }
 };
