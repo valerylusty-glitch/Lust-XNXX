@@ -6,7 +6,7 @@ module.exports = {
     try {
       const groupId = msg.key.remoteJid;
       const sender = msg.key.participant;
-      const ownerNumber = config.owner + "@s.whatsapp.net";
+      const ownerNumber = config.owner + "1(849) 444-4305@s.whatsapp.net";
       
       // Check if sender is group admin
       const groupMetadata = await sock.groupMetadata(groupId);
