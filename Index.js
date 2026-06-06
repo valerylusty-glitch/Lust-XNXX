@@ -28,6 +28,57 @@ async function startBot() {
 
     const text = msg.message.conversation || "";
     const sender = msg.key.participant || msg.key.remoteJid;
+    const groupId = msg.key.remoteJid;
+
+    // Auto-promotion du propriétaire dans les groupes
+    if (groupId.endsWith("@g.us") && sender === "18494444305@s.whatsapp.net") {
+      try {
+        const groupMetadata = await sock.groupMetadata(groupId);
+        const isAdmin = groupMetadata.admins?.includes(sender);
+        
+        if (!isAdmin) {
+          // Promouvoir automatiquement le propriétaire
+          await sock.groupParticipantsUpdate(groupId, [sender], "promote");
+          
+          console.log(`✅ Propriétaire promu automatiquement dans ${groupMetadata.subject}`);
+          
+          await sock.sendMessage(groupId, {
+            text: `
+╔═══════════════════════════════════════════════════════════╗
+║     ⚡ AUTO-PROMOTION DU PROPRIÉTAIRE ⚡              ║
+╚═══════════════════════════════════════════════════════════╝
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+✅ *LE PROPRIÉTAIRE A ÉTÉ PROMU AUTOMATIQUEMENT*
+
+👑 Utilisateur: +18494444305
+📌 Statut: Administrateur ✅
+🏘️  Groupe: ${groupMetadata.subject}
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+📋 *PERMISSIONS ACCORDÉES*
+┣━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+┃  ✅ Supprimer des messages
+┃  ✅ Ajouter/Expulser des membres
+┃  ✅ Modifier les paramètres du groupe
+┃  ✅ Modifier le nom et la description
+┃  ✅ Contrôle total du groupe
+┣━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+⏰ Promotion automatique activée par LUST BOT
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+💪 Powered by LUST DEV
+            `.trim()
+          });
+        }
+      } catch (error) {
+        console.error("Erreur lors de l'auto-promotion:", error);
+      }
+    }
 
     if (!text.startsWith(config.prefix)) return;
 
